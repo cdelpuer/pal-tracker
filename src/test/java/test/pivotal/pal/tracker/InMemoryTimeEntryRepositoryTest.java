@@ -38,8 +38,12 @@ public class InMemoryTimeEntryRepositoryTest {
         long timeEntryId = 1L;
         TimeEntry expected = new TimeEntry(timeEntryId, projectId, userId, LocalDate.parse("2017-01-08"), 8);
         TimeEntry readEntry = repo.find(timeEntryId);
+<<<<<<< HEAD
         assertThat(readEntry).isEqualToComparingFieldByField(expected);
 
+=======
+        assertThat(readEntry).isEqualTo(expected);
+>>>>>>> 69b119f... Add tests for MVC lab
     }
 
     @Test
@@ -75,8 +79,13 @@ public class InMemoryTimeEntryRepositoryTest {
                 new TimeEntry(321L, 654L, LocalDate.parse("2017-01-09"), 5));
 
         TimeEntry expected = new TimeEntry(created.getId(), 321L, 654L, LocalDate.parse("2017-01-09"), 5);
+<<<<<<< HEAD
         assertThat(updatedEntry).isEqualToComparingFieldByField(expected);
         assertThat(repo.find(created.getId())).isEqualToComparingFieldByField(expected);
+=======
+        assertThat(updatedEntry).isEqualTo(expected);
+        assertThat(repo.find(created.getId())).isEqualTo(expected);
+>>>>>>> 69b119f... Add tests for MVC lab
     }
 
     @Test
